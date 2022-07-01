@@ -1,0 +1,13 @@
+<div class=list-container>
+    <div>
+        <mat-card color="primary" class=item-container *ngFor="let sneaker of sneakerList">
+            <mat-card-title>{{sneaker.modelname}}</mat-card-title>
+            <mat-card-content>
+                <span>Author: {{sneaker.author}} </span>
+                <span>--- Price: {{sneaker.price}} </span>
+                <span>--- Creation Date: {{sneaker.creationdate}} </span>
+                <p *ngIf="sneaker.specialedition">Artist Collaborator: {{sneaker.artistcollaborator}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

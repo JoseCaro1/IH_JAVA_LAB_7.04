@@ -1,0 +1,41 @@
+
+<div class=form-container>
+    <mat-card class="background primary">
+        <mat-card-title>Add New Model</mat-card-title>
+        <form class=form [formGroup]="form" (submit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Enter the model's name</mat-label>
+                <input type="text" placeholder="Ex: Air Max 270" matInput formControlName="modelname">
+                <mat-error *ngIf="nameModelField.hasError('required') && nameModelField.touched">Model required</mat-error>
+            </mat-form-field>
+            <mat-form-field  appearance="outline">
+                <mat-label>Enter the price</mat-label>
+                <input type="number" placeholder="Ex: 59.99" matInput formControlName="price">
+                <mat-error  *ngIf="priceField.hasError('required') && priceField.touched">Price required</mat-error>
+            </mat-form-field>
+            <mat-label>Special edition: </mat-label>
+            <mat-radio-group [ngModel]="radioValue" formControlName="specialedition" (click)="onRadioClick()" >
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-form-field>
+                <mat-label>Enter the author's name</mat-label>
+                <input type="text" placeholder="Ex: John Smith" matInput formControlName="author">
+                <mat-error *ngIf="authorField.hasError('required') && authorField.touched">Author required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enter the creation date</mat-label>
+                <input type="date" placeholder="29/04/1996" matInput formControlName="creationdate">
+                <mat-error *ngIf="creationDateField.hasError('required') && creationDateField.touched">Creation date required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Enter the artist collaborator's name</mat-label>
+                <input type="text" placeholder="Ex: John Smith" matInput formControlName="artistcollaborator">
+                <mat-error *ngIf="artistCollaboratorField.hasError('required') && artistCollaboratorField.touched ">Artist Collaborator required</mat-error>
+            </mat-form-field>
+            <button mat-raised-button [disabled]="form.invalid">Submit</button>
+        </form>
+    </mat-card>
+    
+</div>
+

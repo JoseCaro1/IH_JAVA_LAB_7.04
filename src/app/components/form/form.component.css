@@ -1,0 +1,21 @@
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10em;
+    padding-bottom: 3em;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ng-invalid {
+    color: none;
+}
